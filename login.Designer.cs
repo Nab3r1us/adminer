@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,26 +40,12 @@
             this.dbname_text = new System.Windows.Forms.TextBox();
             this.password_text = new System.Windows.Forms.MaskedTextBox();
             this.loggin_button = new System.Windows.Forms.Button();
-            this.statusStrip1.SuspendLayout();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.tableLayoutPanel1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 164);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(519, 22);
-            this.statusStrip1.SizingGrip = false;
-            this.statusStrip1.TabIndex = 7;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
-            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
             // tableLayoutPanel1
             // 
@@ -150,6 +134,7 @@
             // engine_comboBox
             // 
             this.engine_comboBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.engine_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.engine_comboBox.FormattingEnabled = true;
             this.engine_comboBox.Items.AddRange(new object[] {
             "MySQL",
@@ -201,33 +186,60 @@
             this.loggin_button.TabIndex = 10;
             this.loggin_button.Text = "Войти";
             this.loggin_button.UseVisualStyleBackColor = true;
+            this.loggin_button.Click += new System.EventHandler(this.Loggin_button_Click);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.toolStripProgressBar1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 189);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(519, 22);
+            this.statusStrip1.SizingGrip = false;
+            this.statusStrip1.TabIndex = 12;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
+            // 
+            // toolStripProgressBar1
+            // 
+            this.toolStripProgressBar1.Margin = new System.Windows.Forms.Padding(20, 3, 1, 3);
+            this.toolStripProgressBar1.MarqueeAnimationSpeed = 50;
+            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(250, 16);
+            this.toolStripProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.toolStripProgressBar1.Visible = false;
             // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(519, 186);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.ClientSize = new System.Drawing.Size(519, 211);
             this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(535, 225);
+            this.MaximumSize = new System.Drawing.Size(535, 250);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(535, 225);
+            this.MinimumSize = new System.Drawing.Size(535, 250);
             this.Name = "login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adminer : Вход";
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.login_FormClosing);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -239,8 +251,10 @@
         private System.Windows.Forms.TextBox login_text;
         private System.Windows.Forms.TextBox dbname_text;
         private System.Windows.Forms.MaskedTextBox password_text;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.Button loggin_button;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
     }
 }
 
